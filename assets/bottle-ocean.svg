@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 180" aria-hidden="true">
+  <!-- Body - submerged, algae-covered, rotated -->
+  <path d="M18 20 h44 l6 24 v90 a10 10 0 0 1-10 10 H22 a10 10 0 0 1-10-10 V44 z" fill="#2A6B5A" stroke="#0B3C49" stroke-width="2.5"/>
+  <!-- Barnacles / algae patches -->
+  <circle cx="26" cy="65" r="5" fill="#1A4A3A" opacity=".8"/>
+  <circle cx="58" cy="80" r="4" fill="#1A4A3A" opacity=".8"/>
+  <circle cx="30" cy="110" r="6" fill="#1A4A3A" opacity=".8"/>
+  <circle cx="55" cy="125" r="3" fill="#1A4A3A" opacity=".8"/>
+  <!-- Algae strands -->
+  <path d="M24 60 Q16 50 18 38 Q20 50 28 58 z" fill="#1F8A5B" opacity=".6"/>
+  <path d="M56 95 Q68 85 65 70 Q60 82 54 93 z" fill="#1F8A5B" opacity=".6"/>
+  <path d="M34 140 Q28 148 32 158" stroke="#1F8A5B" stroke-width="2" fill="none" opacity=".7"/>
+  <!-- Cap lost -->
+  <!-- Neck -->
+  <rect x="28" y="8" width="24" height="14" rx="3" fill="#2A6B5A" stroke="#0B3C49" stroke-width="2"/>
+  <!-- Bubble trails -->
+  <circle cx="45" cy="30" r="2.5" fill="none" stroke="#6FD0E8" stroke-width="1" opacity=".6"/>
+  <circle cx="52" cy="18" r="1.5" fill="none" stroke="#6FD0E8" stroke-width="1" opacity=".5"/>
+  <circle cx="40" cy="10" r="1" fill="none" stroke="#6FD0E8" stroke-width="1" opacity=".4"/>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" aria-hidden="true">
+  <!-- River scene -->
+  <!-- Sky - murky -->
+  <rect width="320" height="120" fill="#8F7E60" opacity=".3"/>
+  <!-- River bank left -->
+  <path d="M0 100 Q30 90 60 100 L60 200 L0 200 z" fill="#5A4E38" opacity=".8"/>
+  <!-- River bank right -->
+  <path d="M260 100 Q290 90 320 100 L320 200 L260 200 z" fill="#5A4E38" opacity=".8"/>
+  <!-- River water - murky brown -->
+  <path d="M50 100 Q100 108 160 100 Q220 92 280 100 L280 200 L50 200 z" fill="#7B6245" opacity=".7"/>
+  <!-- Water ripples -->
+  <path d="M60 120 Q120 112 180 120 Q240 128 300 120" stroke="#F1D38A" stroke-width="1.5" fill="none" opacity=".4"/>
+  <path d="M50 140 Q110 132 170 140 Q230 148 290 140" stroke="#F1D38A" stroke-width="1.5" fill="none" opacity=".3"/>
+  <path d="M60 160 Q120 152 180 160 Q240 168 290 160" stroke="#F1D38A" stroke-width="1" fill="none" opacity=".2"/>
+  <!-- Floating trash/debris -->
+  <rect x="80" y="115" width="20" height="12" rx="2" fill="#9A8A6A" opacity=".7"/>
+  <rect x="200" y="130" width="15" height="8" rx="2" fill="#9A8A6A" opacity=".6"/>
+  <!-- Bottle floating, tilted -->
+  <g transform="translate(145,105) rotate(-25)">
+    <rect x="-5" y="-22" width="10" height="8" rx="2" fill="#1E6FD9" opacity=".7"/>
+    <path d="M-6 -14 h12 l2 8 v35 a4 4 0 0 1-4 4 h-8 a4 4 0 0 1-4-4 V-6 z" fill="#C8D8B0" stroke="#8A7A60" stroke-width="1.5"/>
+  </g>
+  <!-- Trees background (silhouette) -->
+  <rect x="10" y="60" width="6" height="45" fill="#3A3020" opacity=".5"/>
+  <circle cx="13" cy="52" r="16" fill="#3A3020" opacity=".4"/>
+  <rect x="295" y="55" width="6" height="50" fill="#3A3020" opacity=".5"/>
+  <circle cx="298" cy="47" r="18" fill="#3A3020" opacity=".4"/>
+</svg>

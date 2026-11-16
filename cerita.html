@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerita | Jejak Sebotol</title>
+  <meta name="description" content="Ikuti perjalanan satu botol plastik dalam 5 adegan: dari tangan kita, ke sungai, ke laut, kembali ke piring kita, hingga pilihan kita untuk mengubah ceritanya.">
+  <meta name="theme-color" content="#F4EBD9">
+
+  <!-- Google Fonts: Fraunces (600, 700) + Inter (400, 500, 600) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <noscript><style>.fade-up{opacity:1!important;transform:none!important}</style></noscript>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 140'%3E%3Crect x='22' y='2' width='16' height='12' rx='3' fill='%231E6FD9'/%3E%3Cpath d='M20 14h20l8 22v92a8 8 0 0 1-8 8H20a8 8 0 0 1-8-8V36z' fill='%23BFE3F2' stroke='%231E6FD9' stroke-width='3'/%3E%3C/svg%3E">
+</head>
+<body data-theme="rumah">
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Langsung ke teks cerita</a>
+
+  <!-- ══ NAVBAR KAPSUL ══ -->
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="logo" aria-label="Jejak Sebotol — Kembali ke Beranda">
+        Jejak <span class="logo__accent">Sebotol</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav aria-label="Navigasi utama">
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cerita.html">Cerita</a></li>
+          <li><a href="aksi.html">Aksi</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ INDIKATOR PROGRES VERTIKAL (01/05 SAMPAI 05/05) ══ -->
+  <aside class="progress-indicator" aria-label="Indikator langkah cerita">
+    <span class="pi-counter" aria-live="polite">01 / 05</span>
+    <div class="pi-dots" role="list">
+      <button class="pi-dot active" role="listitem" aria-label="Lompat ke Adegan 1: Di Tangan Kita" title="Adegan 1"></button>
+      <button class="pi-dot" role="listitem" aria-label="Lompat ke Adegan 2: Hanyut ke Sungai" title="Adegan 2"></button>
+      <button class="pi-dot" role="listitem" aria-label="Lompat ke Adegan 3: Tiba di Laut" title="Adegan 3"></button>
+      <button class="pi-dot" role="listitem" aria-label="Lompat ke Adegan 4: Kembali ke Piring Kita" title="Adegan 4"></button>
+      <button class="pi-dot" role="listitem" aria-label="Lompat ke Adegan 5: Kamu Bisa Mengubah Akhir Ceritanya" title="Adegan 5"></button>
+    </div>
+  </aside>
+
+  <!-- ══ MAIN SCROLLYTELLING CONTAINER ══ -->
+  <main id="main-content">
+    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Jejak Sebotol: perjalanan satu botol plastik dalam lima adegan</h1>
+
+    <!-- Petunjuk Durasi & Scroll Awal -->
+    <div style="background: color-mix(in srgb, var(--accent) 10%, transparent); border-bottom: 1px solid var(--border); padding: 0.65rem 1rem; text-align: center; transition: var(--t-bg);">
+      <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+        <span class="text-sm" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--fg);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <strong>Estimasi durasi baca:</strong> ~3 menit &middot; 5 adegan berurutan
+        </span>
+        <a class="text-sm" href="aksi.html" style="font-weight: 600; text-decoration: underline;">Lewati ke Aksi</a>
+      </div>
+    </div>
+
+    <!-- ══ PANGGUNG SCROLLYTELLING (2 KOLOM: STICKY STAGE + SCENES) ══ -->
+    <div class="story-layout">
+
+      <!-- ── KOLOM KIRI: STICKY BOTTLE MORPHING STAGE ── -->
+      <aside class="bottle-stage" aria-label="Panggung visual transformasi botol">
+        <div class="stage-glow" aria-hidden="true"></div>
+
+        <!-- Adegan 1: Botol utuh tegak 0° -->
+        <img class="stage-illus active"
+             data-for="scene-1"
+             src="assets/bottle.svg"
+             alt="Ilustrasi botol plastik utuh, bening, berdiri tegak 0 derajat dengan efek mengambang lembut"
+             width="260" height="520"
+             loading="eager">
+
+        <!-- Adegan 2: Botol miring -25° penyok & label terkelupas di sungai -->
+        <img class="stage-illus"
+             data-for="scene-2"
+             src="assets/bottle-river.svg"
+             alt="Ilustrasi botol plastik miring minus 25 derajat, badan mulai penyok, dan label terkelupas di sungai keruh"
+             width="260" height="520"
+             loading="lazy">
+
+        <!-- Adegan 3: Botol berputar -110° tenggelam berlumut di kedalaman laut -->
+        <img class="stage-illus"
+             data-for="scene-3"
+             src="assets/bottle-ocean.svg"
+             alt="Ilustrasi botol plastik berlumut dan mulai tenggelam berputar minus 110 derajat di kedalaman laut biru"
+             width="260" height="520"
+             loading="lazy">
+
+        <!-- Adegan 4: Wujud botol memudar menjadi partikel mikroplastik di piring makan -->
+        <img class="stage-illus"
+             data-for="scene-4"
+             src="assets/bottle-plate.svg"
+             alt="Ilustrasi wujud botol terurai menjadi partikel mikroplastik yang melayang masuk ke piring makanan"
+             width="280" height="230"
+             loading="lazy">
+
+        <!-- Adegan 5: Botol tumbler guna ulang hijau kokoh -->
+        <img class="stage-illus"
+             data-for="scene-5"
+             src="assets/bottle-tumbler.svg"
+             alt="Ilustrasi botol minum tumbler guna ulang berwarna hijau sage kokoh sebagai simbol solusi nyata"
+             width="260" height="520"
+             loading="lazy">
+
+        <!-- Label Nama Adegan Aktif di Panggung -->
+        <div class="stage-label" id="stage-label-text" aria-hidden="true">Di Tangan Kita</div>
+      </aside>
+
+      <!-- ── KOLOM KANAN: ALUR TEKS 5 ADEGAN ── -->
+      <div class="scenes-column">
+
+        <!-- ═══ ADEGAN 1: DI TANGAN KITA ═══ -->
+        <section class="scene" data-theme="rumah" data-scene="scene-1" aria-labelledby="scene1-heading">
+          <div class="scene__content">
+            
+            <div class="scene__badge fade-up">
+              <span class="scene__badge-dot" aria-hidden="true"></span>
+              <span>Adegan 1 dari 5 &middot; Di Tangan Kita</span>
+            </div>
+
+            <h2 id="scene1-heading" class="scene__title fade-up">
+              Semua berawal<br>dari genggaman kita.
+            </h2>
+
+            <div class="scene__body fade-up">
+              <p>
+                Sebotol air mineral dingin dibeli di minimarket atau warung tepi jalan. Kita meneguknya untuk melepas dahaga dalam waktu kurang lebih dua belas menit. Setelah tetes terakhir tandas, botol itu kehilangan fungsi seketika.
+              </p>
+              <p>
+                Bagi kita, cerita botol itu selesai saat masuk ke tong sampah atau tergeletak di trotoar. Namun bagi alam, perjalanan fisik botol baru saja dimulai.
+              </p>
+            </div>
+
+            <!-- Callout Statistik -->
+            <div class="callout fade-up" aria-label="Statistik timbulan sampah plastik">
+              <span class="callout__num count-up" data-count="20" data-suffix="%">20%</span>
+              <div class="callout__desc">Porsi plastik dalam sampah tercatat nasional pada 2025, atau sekitar seperlima dari seluruh sampah.</div>
+              <div class="callout__src">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.89A2 2 0 0 1 15 10.77V5a3 3 0 0 0-6 0v5.77a2 2 0 0 1-1.11 1.79l-1.78.89A2 2 0 0 0 5 15.24Z"/></svg>
+                <span>Sumber resmi: KLHK, Sistem Informasi Pengelolaan Sampah Nasional (SIPSN), 2025</span>
+              </div>
+            </div>
+
+            <div class="scene__body fade-up">
+              <p>
+                Rata-rata masa guna botol plastik PET di tangan pemakainya hanya berkisar belasan menit, tetapi ikatan polimer sintetisnya diperkirakan membutuhkan <strong>ratusan tahun</strong> untuk terurai di alam bebas, meski angka pastinya belum diketahui.
+              </p>
+            </div>
+
+            <div class="callout fade-up">
+              <span class="callout__num">Ratusan Tahun</span>
+              <div class="callout__desc">Perkiraan lama botol plastik bertahan di alam. Angka pastinya belum diketahui karena umur plastik di alam sulit diukur.</div>
+              <div class="callout__src">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.89A2 2 0 0 1 15 10.77V5a3 3 0 0 0-6 0v5.77a2 2 0 0 1-1.11 1.79l-1.78.89A2 2 0 0 0 5 15.24Z"/></svg>
+                <span>Sumber: GRID-Arendal, Marine Litter Myths</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ═══ ADEGAN 2: HANYUT KE SUNGAI ═══ -->
+        <section class="scene" data-theme="sungai" data-scene="scene-2" aria-labelledby="scene2-heading">
+          <div class="scene__content">
+
+            <div class="scene__badge fade-up">
+              <span class="scene__badge-dot" aria-hidden="true"></span>
+              <span>Adegan 2 dari 5 &middot; Hanyut ke Sungai</span>
+            </div>
+
+            <h2 id="scene2-heading" class="scene__title fade-up">
+              Arus air membawa<br>apa yang kita buang.
+            </h2>
+
+            <div class="scene__body fade-up">
+              <p>
+                Hujan deras mengguyur permukiman. Saluran air dan parit meluap membawa botol yang tercecer. Botol itu terseret masuk ke sungai—badan kemasannya mulai terbentur batu cadas, miring terombang-ambing, penyok, dan label mereknya terkelupas perlahan.
+              </p>
+              <p>
+                Air sungai yang semula jernih kini menampung ribuan limbah anorganik yang mengalir serentak menuju muara.
+              </p>
+            </div>
+
+            <div class="callout fade-up">
+              <span class="callout__num count-up" data-count="83" data-suffix="%">83%</span>
+              <div class="callout__desc">Porsi plastik yang bocor dari daratan ke laut di Indonesia yang dibawa oleh sungai.</div>
+              <div class="callout__src">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.89A2 2 0 0 1 15 10.77V5a3 3 0 0 0-6 0v5.77a2 2 0 0 1-1.11 1.79l-1.78.89A2 2 0 0 0 5 15.24Z"/></svg>
+                <span>Sumber resmi: Bank Dunia, Plastic Waste Discharges from Rivers and Coastlines in Indonesia (2021)</span>
+              </div>
+            </div>
+
+            <div class="scene__body fade-up">
+              <p>
+                Indonesia memiliki lebih dari 5.590 Daerah Aliran Sungai (DAS). Sungai-sungai ini adalah urat nadi kehidupan, namun beban sampah plastik tak terkendali mengubah fungsinya menjadi jalur pengantar limbah massal menuju samudra.
+              </p>
+            </div>
+
+            <div class="callout fade-up">
+              <span class="callout__num count-up" data-count="4900000" data-suffix=" Ton">4.900.000 Ton</span>
+              <div class="callout__desc">Sampah plastik per tahun di Indonesia yang tidak terkelola dengan baik, dari sekitar 7,8 juta ton yang dihasilkan.</div>
+              <div class="callout__src">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.89A2 2 0 0 1 15 10.77V5a3 3 0 0 0-6 0v5.77a2 2 0 0 1-1.11 1.79l-1.78.89A2 2 0 0 0 5 15.24Z"/></svg>
+                <span>Sumber resmi: Bank Dunia, 2021</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ═══ ADEGAN 3: TIBA DI LAUT ═══ -->
+        <section class="scene" data-theme="laut" data-scene="scene-3" aria-labelledby="scene3-heading">
+          <div class="scene__content">
+
+            <div class="scene__badge fade-up">
+              <span class="scene__badge-dot" aria-hidden="true"></span>
+              <span>Adegan 3 dari 5 &middot; Tiba di Laut</span>
+            </div>
+
+            <h2 id="scene3-heading" class="scene__title fade-up">
+              Kedalaman samudra<br>yang membungkam.
+            </h2>
+
+            <div class="scene__body fade-up">
+              <p>
+                Dari muara sungai, botol terdorong ke laut lepas. Seiring waktu, air laut merembes ke dalamnya. Beban jenisnya berubah, dan ia mulai tenggelam berputar perlahan ke kedalaman laut yang gelap.
+              </p>
+              <p>
+                Lumut dan organisme laut mulai menempel di dinding plastik. Tanpa paparan sinar matahari langsung, proses degradasi melambat secara ekstrem di dasar samudra.
+              </p>
+            </div>
+
+            <div class="callout fade-up">
+              <span class="callout__num count-up" data-count="346500" data-suffix=" Ton">346.500 Ton</span>
+              <div class="callout__desc">Perkiraan plastik dari daratan yang masuk ke laut Indonesia setiap tahun (kisaran 201.100 sampai 552.300 ton; studi lain memberi angka berbeda).</div>
+              <div class="callout__src">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.89A2 2 0 0 1 15 10.77V5a3 3 0 0 0-6 0v5.77a2 2 0 0 1-1.11 1.79l-1.78.89A2 2 0 0 0 5 15.24Z"/></svg>
+                <span>Sumber resmi: Bank Dunia, 2021 (perkiraan)</span>
+              </div>
+            </div>
+
+            <div class="scene__body fade-up">
+              <p>
+                Namun botol itu tidak musnah. Gesekan ombak dan salinitas laut perlahan memecahnya menjadi serpihan-serpihan kecil berukuran di bawah lima milimeter yang dikenal sebagai <strong>mikroplastik</strong>.
+              </p>
+              <p>
+                Partikel ini diserap oleh plankton, dimakan oleh ikan kecil, lalu ikan kecil dimangsa ikan besar dalam rantai makanan laut.
+              </p>
+            </div>
+
+            <div class="callout fade-up">
+              <span class="callout__num">28% Ikan</span>
+              <div class="callout__desc">Ikan di pasar Makassar yang mengandung sampah plastik di saluran cernanya (21 dari 76 ikan yang diteliti).</div>
+              <div class="callout__src">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.89A2 2 0 0 1 15 10.77V5a3 3 0 0 0-6 0v5.77a2 2 0 0 1-1.11 1.79l-1.78.89A2 2 0 0 0 5 15.24Z"/></svg>
+                <span>Sumber ilmiah: Rochman dkk., Scientific Reports (2015)</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ═══ ADEGAN 4: KEMBALI KE PIRING KITA ═══ -->
+        <section class="scene" data-theme="piring" data-scene="scene-4" aria-labelledby="scene4-heading">
+          <!-- Canvas partikel mikroplastik melayang masuk ke piring -->
+          <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+          <div class="scene__content">
+
+            <div class="scene__badge fade-up">
+              <span class="scene__badge-dot" aria-hidden="true"></span>
+              <span>Adegan 4 dari 5 &middot; Kembali ke Piring Kita</span>
+            </div>
+
+            <h2 id="scene4-heading" class="scene__title fade-up">
+              Limbah yang kita buang<br>kini kita santap.
+            </h2>
+
+            <div class="scene__body fade-up">
+              <p>
+                Ikan tangkapan nelayan dimasak dan disajikan di meja makan kita. Garam dapur yang dikristalkan dari air laut ikut ditaburkan. Di balik aroma masakan yang menggugah selera, bisa terdapat mikroplastik yang tak kasat mata.
+              </p>
+              <p>
+                Siklus itu akhirnya berputar penuh. Sampah yang kita buang tanpa pikir panjang bisa kembali ke dalam tubuh kita sendiri.
+              </p>
+            </div>
+
+            <div class="callout fade-up">
+              <span class="callout__num">&gt; 2 Km</span>
+              <div class="callout__desc">Kedalaman laut Indonesia tempat mikroplastik ditemukan dalam penelitian BRIN.</div>
+              <div class="callout__src">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.89A2 2 0 0 1 15 10.77V5a3 3 0 0 0-6 0v5.77a2 2 0 0 1-1.11 1.79l-1.78.89A2 2 0 0 0 5 15.24Z"/></svg>
+                <span>Sumber ilmiah: BRIN (2026), dimuat CNBC Indonesia</span>
+              </div>
+            </div>
+
+            <div class="scene__body fade-up">
+              <p>
+                Riset medis terkini bahkan telah mengonfirmasi bahwa partikel mikroplastik polietilen dan PET telah terdeteksi menembus sirkulasi darah manusia, menimbulkan tanda tanya besar terhadap kesehatan jangka panjang.
+              </p>
+            </div>
+
+            <div class="callout fade-up">
+              <span class="callout__num">17 dari 22</span>
+              <div class="callout__desc">Donor dewasa sehat di Belanda yang darahnya mengandung partikel plastik. Dampak kesehatannya masih diteliti.</div>
+              <div class="callout__src">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.89A2 2 0 0 1 15 10.77V5a3 3 0 0 0-6 0v5.77a2 2 0 0 1-1.11 1.79l-1.78.89A2 2 0 0 0 5 15.24Z"/></svg>
+                <span>Sumber medis: Leslie et al., Environment International (2022)</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ═══ ADEGAN 5: HARAPAN & AKSI ═══ -->
+        <section class="scene" data-theme="aksi" data-scene="scene-5" aria-labelledby="scene5-heading">
+          <div class="scene__content">
+
+            <div class="scene__badge fade-up">
+              <span class="scene__badge-dot" aria-hidden="true"></span>
+              <span>Adegan 5 dari 5 &middot; Harapan &amp; Solusi</span>
+            </div>
+
+            <h2 id="scene5-heading" class="scene__title fade-up">
+              Kamu memegang kendali<br>akhir ceritanya.
+            </h2>
+
+            <div class="scene__body fade-up">
+              <p>
+                Perjalanan ini tidak harus berakhir di piring makan kita. Rantai polusi ini dapat kita putus tepat di hulu—pada saat keputusan membeli dibuat di tangan kita.
+              </p>
+              <p>
+                Dengan mengganti botol sekali pakai menjadi tumbler guna ulang yang kokoh, kita menghentikan ratusan siklus pencemaran sebelum mereka sempat tercipta.
+              </p>
+            </div>
+
+            <div class="callout fade-up">
+              <span class="callout__num">365 Botol</span>
+              <div class="callout__desc">Hitungan sederhana: satu botol sekali pakai per hari selama setahun, yang bisa dicegah dengan membawa botol minum sendiri.</div>
+              <div class="callout__src">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.89A2 2 0 0 1 15 10.77V5a3 3 0 0 0-6 0v5.77a2 2 0 0 1-1.11 1.79l-1.78.89A2 2 0 0 0 5 15.24Z"/></svg>
+                <span>Sumber: hitungan sederhana tim (1 botol x 365 hari)</span>
+              </div>
+            </div>
+
+            <!-- Tombol Navigasi Lanjutan Jelas (Zero Confusion Flow) -->
+            <div class="fade-up" style="margin-top: 2rem;">
+              <p class="text-sm text-muted" style="margin-bottom: 1rem;">
+                Cerita telah selesai. Sekarang, hitung berapa banyak plastik yang bisa kamu cegah dan tentukan komitmen aksimu:
+              </p>
+              <div class="flex gap-2" style="flex-wrap: wrap;">
+                <a href="aksi.html" class="btn btn-primary btn-lg">
+                  <span>Lanjut ke Halaman Aksi &amp; Kalkulator</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="index.html" class="btn btn-ghost btn-lg">
+                  <span>Kembali ke Home</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div><!-- /.scenes-column -->
+    </div><!-- /.story-layout -->
+
+  </main>
+
+  <!-- ══ FOOTER KONSISTEN ══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__brand">Jejak <span class="footer__brand-accent">Sebotol</span></span>
+        <ul class="footer__nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cerita.html">Cerita</a></li>
+          <li><a href="aksi.html">Aksi</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <p class="footer__copy">
+        &copy; 2026 Tim localhost:3000 &middot; Techno Versary Vol. II &middot; HIMA TI FKOM UNIKU
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

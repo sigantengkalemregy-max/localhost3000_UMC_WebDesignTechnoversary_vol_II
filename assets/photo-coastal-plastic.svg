@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4A6572"/>
+      <stop offset="50%" stop-color="#7B8D93"/>
+      <stop offset="100%" stop-color="#B0BEC5"/>
+    </linearGradient>
+    <linearGradient id="seaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1C313A"/>
+      <stop offset="60%" stop-color="#26424D"/>
+      <stop offset="100%" stop-color="#375765"/>
+    </linearGradient>
+    <linearGradient id="sandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#54493B"/>
+      <stop offset="40%" stop-color="#70624E"/>
+      <stop offset="100%" stop-color="#8C7B62"/>
+    </linearGradient>
+    <linearGradient id="vignette" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.1"/>
+      <stop offset="70%" stop-color="#000" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="600" height="190" fill="url(#skyGrad)"/>
+  
+  <!-- Distant Mountains -->
+  <path d="M0 180 Q80 145 160 170 T340 160 T520 175 T600 165 L600 190 L0 190 Z" fill="#3E4D55" opacity="0.6"/>
+
+  <!-- Ocean -->
+  <rect y="180" width="600" height="110" fill="url(#seaGrad)"/>
+  <!-- Gentle Waves -->
+  <path d="M0 210 Q50 205 100 210 T200 210 T300 210 T400 210 T500 210 T600 210" stroke="#78909C" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M0 240 Q70 235 140 240 T280 240 T420 240 T560 240 T600 240" stroke="#90A4AE" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M0 270 Q60 264 120 270 T240 270 T360 270 T480 270 T600 270" stroke="#CFD8DC" stroke-width="3" fill="none" opacity="0.6"/>
+
+  <!-- Shoreline Beach -->
+  <path d="M0 270 Q120 265 260 275 T600 268 L600 400 L0 400 Z" fill="url(#sandGrad)"/>
+
+  <!-- Wet Sand Reflection -->
+  <path d="M0 270 Q150 268 300 276 T600 270 L600 300 L0 295 Z" fill="#42382C" opacity="0.4"/>
+
+  <!-- Documentary Plastic Debris on Shoreline -->
+  <!-- Bottled Waste Scattered -->
+  <g transform="translate(110, 320) rotate(18)">
+    <rect x="-8" y="-18" width="16" height="36" rx="4" fill="#B0BEC5" stroke="#37474F" stroke-width="1.2" opacity="0.85"/>
+    <rect x="-4" y="-23" width="8" height="5" rx="1" fill="#1E6FD9"/>
+  </g>
+  <g transform="translate(180, 345) rotate(-35)">
+    <rect x="-10" y="-22" width="20" height="44" rx="5" fill="#CFD8DC" stroke="#455A64" stroke-width="1.2" opacity="0.9"/>
+    <rect x="-5" y="-28" width="10" height="6" rx="1.5" fill="#E53935"/>
+  </g>
+  <g transform="translate(320, 315) rotate(72)">
+    <rect x="-7" y="-16" width="14" height="32" rx="3.5" fill="#90A4AE" stroke="#37474F" stroke-width="1.2" opacity="0.8"/>
+    <rect x="-3.5" y="-20" width="7" height="4" rx="1" fill="#1E6FD9"/>
+  </g>
+  <g transform="translate(430, 350) rotate(-12)">
+    <rect x="-9" y="-20" width="18" height="40" rx="4" fill="#ECEFF1" stroke="#455A64" stroke-width="1.2" opacity="0.88"/>
+    <rect x="-4" y="-25" width="8" height="5" rx="1.5" fill="#43A047"/>
+  </g>
+  <!-- Tangled Net & Bags -->
+  <path d="M220 330 Q250 315 280 328 T320 340 T270 360 T220 330" fill="#78909C" opacity="0.6"/>
+  <path d="M480 320 Q520 310 540 335 T510 365 T470 340 Z" fill="#FDD835" opacity="0.5"/>
+
+  <!-- Atmospheric Vignette / Darkening Overlay for text readability -->
+  <rect width="600" height="400" fill="url(#vignette)"/>
+</svg>

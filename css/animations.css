@@ -1,0 +1,84 @@
+/* ============================================================
+   JEJAK SEBOTOL — animations.css  (v2)
+   Per-scene & micro-interaction animations
+   ============================================================ */
+
+/* ── Hero bottle float ─────────────────────────────────────── */
+.hero__bottle {
+  animation: heroFloat 4s cubic-bezier(0.37,0,0.63,1) infinite,
+             heroEntrance 0.9s cubic-bezier(0.22,1,0.36,1) both;
+}
+@keyframes heroFloat   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+@keyframes heroEntrance{
+  from { opacity:0; transform:translateY(28px) scale(0.92); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+
+/* ── Page entry ────────────────────────────────────────────── */
+.page-enter {
+  animation: pageIn 0.55s cubic-bezier(0.22,1,0.36,1) both;
+}
+@keyframes pageIn {
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── Action card checked celebration ─────────────────────── */
+@keyframes checkBounce {
+  0%  { transform:scale(1); }
+  30% { transform:scale(1.05) rotate(-1.5deg); }
+  60% { transform:scale(1.04) rotate(1deg); }
+  80% { transform:scale(1.01); }
+  100%{ transform:scale(1); }
+}
+.action-card.just-checked {
+  animation: checkBounce 0.42s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ── Scroll hint arrow ─────────────────────────────────────── */
+.scroll-hint__arrow {
+  animation: arrowBounce 2s cubic-bezier(0.37,0,0.63,1) infinite;
+}
+@keyframes arrowBounce {
+  0%,100%{ transform:translateY(0); opacity:0.5; }
+  50%    { transform:translateY(7px); opacity:1; }
+}
+
+/* ── Stage illustration entrance ──────────────────────────── */
+.stage-illus.active {
+  animation-fill-mode: both;
+}
+
+/* ── Callout number pulse (on enter) ──────────────────────── */
+.callout.animated .callout__num {
+  animation: numPop 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+@keyframes numPop {
+  0%  { transform: scale(0.8); opacity:0; }
+  60% { transform: scale(1.06); }
+  100%{ transform: scale(1); opacity:1; }
+}
+
+/* ── Particle canvas fade ─────────────────────────────────── */
+#particle-canvas { transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1); }
+
+/* ── Progress bar smooth ──────────────────────────────────── */
+.progress-fill { transition: width 0.65s cubic-bezier(0.22,1,0.36,1); }
+
+/* ── Nav link hover ───────────────────────────────────────── */
+.nav-links a { transition: background 0.2s cubic-bezier(0.22,1,0.36,1), color 0.2s cubic-bezier(0.22,1,0.36,1); }
+
+/* ── Button hover ─────────────────────────────────────────── */
+.btn { transition: transform 0.22s cubic-bezier(0.22,1,0.36,1), box-shadow 0.22s cubic-bezier(0.22,1,0.36,1), background 0.22s cubic-bezier(0.22,1,0.36,1), color 0.22s cubic-bezier(0.22,1,0.36,1), border-color 0.22s cubic-bezier(0.22,1,0.36,1); }
+.btn:hover { transform: translateY(-2px); }
+.btn:active{ transform: translateY(0) scale(0.98); }
+
+/* ── Reduced motion overrides ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero__bottle,
+  .page-enter,
+  .action-card.just-checked,
+  .scroll-hint__arrow,
+  .callout.animated .callout__num { animation: none !important; }
+  .btn:hover { transform: none; }
+}
