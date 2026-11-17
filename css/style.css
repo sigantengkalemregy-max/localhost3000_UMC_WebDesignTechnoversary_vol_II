@@ -183,7 +183,7 @@ h3      { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 600; }
 /* Stat numbers use Fraunces */
 .stat-num {
   font-family: 'Fraunces', Georgia, serif;
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
   font-weight: 700;
   color: var(--accent);
   display: block;
@@ -630,7 +630,7 @@ em        { font-style: italic; }
 .callout {
   margin: var(--space-6) 0;
   padding: var(--space-5) var(--space-5);
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  background: var(--bg-card);
   border-left: 3px solid var(--accent);
   border-radius: 0 var(--r-sm) var(--r-sm) 0;
   transition: background var(--dur-bg) var(--ease-out),
@@ -1268,4 +1268,125 @@ body[data-theme="sungai"]{--fg-muted:#F8F1E2;--accent:#FDF1D0}
 @media (max-width: 1024px) {
   .bottle-stage { position: sticky; top: var(--nav-h); height: 30vh; min-height: 0; padding: 0.5rem 1rem; gap: 0.25rem; z-index: 4; background: var(--bg); border-bottom: 1px solid var(--border); }
   .stage-illus, .stage-illus.active { max-width: min(120px, 22vh); }
+}
+
+/* ── Langkah 3: hero lebih hidup ── */
+
+/* Cahaya lembut  di belakang botol */
+.hero__visual { position: relative; }
+.hero__visual::before {
+  content: "";
+  position: absolute;
+  width: min(80%, 420px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(30, 111, 217, 0.28) 0%, rgba(30, 111, 217, 0) 70%);
+  filter: blur(8px);
+  z-index: 0;
+}
+.hero__bottle { position: relative; z-index: 1; }
+
+/* Bayangan di bawah botol yang mengecil saat botol naik */
+.hero__bottle::after {
+  content: "";
+  position: absolute;
+  bottom: 13%;
+  width: 140px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(38, 33, 26, 0.18);
+  filter: blur(6px);
+  z-index: 0;
+  animation: shadowPulse 4s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+@keyframes shadowPulse {
+  0%, 100% { transform: scale(1);    opacity: 0.9; }
+  50%      { transform: scale(0.75); opacity: 0.5; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__bottle::after { animation: none; }
+}
+
+/* Strip lama warna perjalanan */
+.journey { display: flex; gap: 0.4rem; margin-top: var(--space-6); max-width: 420px; }
+.journey__step {
+  flex: 1;
+  padding: 0.55rem 0.25rem;
+  border-radius: 999px;
+  background: var(--c);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(38, 33, 26, 0.12);
+}
+.journey__step:first-child { color: #26211A; }
+
+/* ── Langkah 4: gelombang air di panggung botol ── */
+.bottle-stage::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 90px;
+  background: var(--accent);
+  opacity: 0;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 30 Q50 10 100 30 T200 30 T300 30 T400 30 V60 H0 Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 30 Q50 10 100 30 T200 30 T300 30 T400 30 V60 H0 Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 25% 100%;
+  mask-size: 25% 100%;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  pointer-events: none;
+  transition: opacity 0.9s ease;
+  animation: waveSlide 9s linear infinite;
+}
+body[data-theme="sungai"] .bottle-stage::after,
+body[data-theme="laut"] .bottle-stage::after { opacity: 0.3; }
+@keyframes waveSlide { to { transform: translateX(-25%); } }
+@media (prefers-reduced-motion: reduce) {
+  .bottle-stage::after { animation: none; }
+}
+
+/* ── Langkah 5: kepala halaman bernuansa cerita ── */
+.page-head { position: relative; overflow: hidden; padding-bottom: 5rem; margin-bottom: 1.5rem; }
+.page-head > .container { position: relative; z-index: 1; }
+.page-head::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 24%, transparent) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 56px;
+  background: var(--accent);
+  opacity: 0.14;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 30 Q50 10 100 30 T200 30 T300 30 T400 30 V60 H0 Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 30 Q50 10 100 30 T200 30 T300 30 T400 30 V60 H0 Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 50% 100%;
+  mask-size: 50% 100%;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  pointer-events: none;
+}
+
+/* ── Perbaikan: botol tidak terpotong di panggung HP ── */
+@media (max-width: 1024px) {
+  .stage-illus, .stage-illus.active {
+    width: auto;
+    max-width: 100%;
+    max-height: calc(30vh - 2rem);
+  }
 }
