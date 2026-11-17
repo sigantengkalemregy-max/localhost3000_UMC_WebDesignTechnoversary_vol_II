@@ -4,6 +4,8 @@ Website edukasi dan kampanye lingkungan: perjalanan satu botol plastik dari tang
 
 Dibuat untuk Web Design Competition, Techno Versary Vol. II (tema EcoDigital For Environment).
 
+Demo: https://sigantengkalemregy-max.github.io/webdesign_localhost3000_technoversary_vol.II/
+
 ## Tim
 - Nama tim: localhost:3000
 - Anggota:
