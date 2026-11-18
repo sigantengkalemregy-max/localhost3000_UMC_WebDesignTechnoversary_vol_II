@@ -1390,3 +1390,25 @@ body[data-theme="laut"] .bottle-stage::after { opacity: 0.3; }
     max-height: calc(30vh - 2rem);
   }
 }
+
+/* ── Perbaikan: botol tidak terpotong di layar laptop ── */
+@media (min-width: 1025px) {
+  .stage-illus, stage-illus.active {
+    width: auto;
+    max-width: 260px;
+    max-height: calc(100vh - var(--nav-h) - 9rem);
+  }
+}
+
+/* ── Perbaikan: kartu Misi di halaman About jadi satu kolom di HP ── */
+@media (max-width: 768px) {
+  .about-split { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+}
+
+/* ── Perbaikan: menu hamburger dan footer di HP ── */
+@media (max-width: 768px) {
+  .nav-toggle { min-width: 44px; min-height: 44px; }
+  .nav-link.open { border-radius: 0 0 1.25rem 1.25rem; }
+  .footer__nav { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; }
+  .footer__nav a { display: inline-block; padding: 0.75rem 0.6rem; }
+}
